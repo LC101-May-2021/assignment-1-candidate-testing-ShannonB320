@@ -46,16 +46,18 @@ function askQuestion(arrOfQuestions) {
 }
 
 
+let numCorrect = 0;
 let grade = 0;
 
 function gradeQuiz(arrOfAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i=0; i < arrOfAnswers.length; i++) {
     if (correctAnswers[i].toUpperCase() === arrOfAnswers[i].toUpperCase()) {
-      grade += 1;
+      numCorrect += 1;
     } else {
-      grade += 0;    
+      numCorrect += 0;    
     }
+  grade = numCorrect/5*100
   }
   return grade;
 }
@@ -75,7 +77,7 @@ function runProgram() {
     }
 
   gradeQuiz(this.candidateAnswers);
-    console.log(`\n>>> Overall grade: ${(grade/5)*100} (${grade} out of 5 responses correct) <<<`)
+    console.log(`\n>>> Overall grade: ${grade}% (${numCorrect} out of 5 responses correct) <<<`)
 
     if ((grade/5)*100 >= 80) {
       console.log(">>> Status: PASSED <<<");
