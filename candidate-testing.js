@@ -21,10 +21,10 @@ let questions = [
 ];
 
 let correctAnswers = [
-  "SALLY RIDE", 
-  "TRUE", 
+  "Sally Ride", 
+  "True", 
   "40", 
-  "TRAJECTORY", 
+  "Trajectory", 
   "3"
 ];
 
@@ -52,7 +52,7 @@ let grade = 0;
 function gradeQuiz(arrOfAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i=0; i < arrOfAnswers.length; i++) {
-    if (correctAnswers[i] === arrOfAnswers[i]) {
+    if (correctAnswers[i].toUpperCase() === arrOfAnswers[i]) {
       grade += 1;
     } else {
       grade += 0;    
