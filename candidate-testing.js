@@ -22,7 +22,7 @@ let questions = [
 
 let correctAnswers = [
   "Sally Ride", 
-  "True", 
+  "true", 
   "40", 
   "Trajectory", 
   "3"
@@ -40,8 +40,7 @@ return candidateName;
 function askQuestion(arrOfQuestions) {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for (let i=0; i < arrOfQuestions.length; i++) {
-    rawCandidateAnswer = input.question(arrOfQuestions[i]);
-    candidateAnswers[i] = rawCandidateAnswer.toUpperCase();
+    candidateAnswers[i] = input.question(arrOfQuestions[i]);
   }
   return candidateAnswers
 }
@@ -52,7 +51,7 @@ let grade = 0;
 function gradeQuiz(arrOfAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i=0; i < arrOfAnswers.length; i++) {
-    if (correctAnswers[i].toUpperCase() === arrOfAnswers[i]) {
+    if (correctAnswers[i].toUpperCase() === arrOfAnswers[i].toUpperCase()) {
       grade += 1;
     } else {
       grade += 0;    
