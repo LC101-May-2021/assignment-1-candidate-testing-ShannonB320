@@ -32,8 +32,8 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-
 candidateName = input.question("Enter your name: "); 
+return candidateName;
 }
 
 
@@ -51,7 +51,7 @@ let grade = 0;
 
 function gradeQuiz(arrOfAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  for (let i=0; i < correctAnswers.length; i++) {
+  for (let i=0; i < arrOfAnswers.length; i++) {
     if (correctAnswers[i] === arrOfAnswers[i]) {
       grade += 1;
     } else {
@@ -69,14 +69,13 @@ function runProgram() {
     console.log("Hello, " + candidateName + "!\n");
   
   askQuestion(questions);
-
-  gradeQuiz(this.candidateAnswers);
     console.log(`\nCandidate Name: ${candidateName}`)
     
     for (let i=0; i < questions.length; i++) {
       console.log(`\n${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`);
     }
-    
+
+  gradeQuiz(this.candidateAnswers);
     console.log(`\n>>> Overall grade: ${(grade/5)*100} (${grade} out of 5 responses correct) <<<`)
 
     if ((grade/5)*100 >= 80) {
