@@ -32,18 +32,20 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
+
 candidateName = input.question("Enter your name: "); 
 }
 
 
-function askQuestion() {
+function askQuestion(arrOfQuestions) {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  for (let i=0; i < questions.length; i++) {
-    rawCandidateAnswer = input.question(questions[i]);
+  for (let i=0; i < arrOfQuestions.length; i++) {
+    rawCandidateAnswer = input.question(arrOfQuestions[i]);
     candidateAnswers[i] = rawCandidateAnswer.toUpperCase();
   }
   return candidateAnswers
 }
+
 
 let grade = 0;
 
@@ -66,11 +68,11 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
     console.log("Hello, " + candidateName + "!\n");
   
-  askQuestion();
-    console.log(candidateAnswers);
-    console.log(`\nCandidate Name: ${candidateName}`)
+  askQuestion(questions);
 
   gradeQuiz(this.candidateAnswers);
+    console.log(`\nCandidate Name: ${candidateName}`)
+    
     for (let i=0; i < questions.length; i++) {
       console.log(`\n${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`);
     }
