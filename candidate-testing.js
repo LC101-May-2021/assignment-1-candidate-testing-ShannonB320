@@ -52,7 +52,7 @@ let grade = 0;
 function gradeQuiz(arrOfAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   for (let i=0; i < arrOfAnswers.length; i++) {
-    if (correctAnswers[i].toUpperCase() === arrOfAnswers[i].toUpperCase()) {
+    if (correctAnswers[i].toLowerCase() === arrOfAnswers[i].toLowerCase()) {
       numCorrect += 1;
     } else {
       numCorrect += 0;    
@@ -85,6 +85,8 @@ function runProgram() {
       console.log(">>> Status: FAILED <<<");
     }
 }
+
+
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
