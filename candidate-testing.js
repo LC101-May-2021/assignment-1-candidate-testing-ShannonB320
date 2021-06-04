@@ -73,7 +73,7 @@ function runProgram() {
     console.log(`\nCandidate Name: ${candidateName}`)
     
     for (let i=0; i < questions.length; i++) {
-      console.log(`\n${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`);
+      console.log(`\n${i+1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}`);
     }
 
   gradeQuiz(this.candidateAnswers);
